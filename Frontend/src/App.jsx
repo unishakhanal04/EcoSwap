@@ -14,6 +14,8 @@ import Analytics from './pages/seller/Analytics';
 import Messages from './pages/seller/Messages';
 import Settings from './pages/seller/Settings';
 
+import Common from './pages/Buyer/Common'
+
 function App() {
   const isSellerRoute = window.location.pathname.startsWith('/seller');
 
@@ -38,6 +40,10 @@ function App() {
           {/* Buyer  */}
            <Route path="/buyer" element={<Navigate to="/buyer/dashboard" replace />} />
           <Route path="/buyer/*" element={<BuyerComponent />} />
+
+          {/* Seller */}
+          <Route path = "/seller" element = {<Common/>}/>
+
         </Routes>
       </div>
     </Router>

@@ -1,329 +1,245 @@
-import React, { useState, useEffect } from 'react';
-import { Search, Filter, Heart, MapPin, Star, Grid, List } from 'lucide-react';
-import './BrowseItems.css';
+import { useState } from 'react'
 
 const BrowseItems = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [priceRange, setPriceRange] = useState('all');
-  const [sortBy, setSortBy] = useState('newest');
-  const [viewMode, setViewMode] = useState('grid');
-  const [showFilters, setShowFilters] = useState(false);
-
-  const categories = [
-    { id: 'all', name: 'All Items' },
-    { id: 'lighting', name: 'Lighting' },
-    { id: 'furniture', name: 'Furniture' },
-    { id: 'decor', name: 'Decor' },
-    { id: 'plants', name: 'Plants & Planters' },
-    { id: 'artwork', name: 'Artwork' },
-    { id: 'textiles', name: 'Textiles' }
-  ];
-
-  const priceRanges = [
-    { id: 'all', name: 'All Prices' },
-    { id: '0-25', name: 'Under $25' },
-    { id: '25-50', name: '$25 - $50' },
-    { id: '50-100', name: '$50 - $100' },
-    { id: '100+', name: '$100+' }
-  ];
-
+  const [searchTerm, setSearchTerm] = useState('')
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [priceRange, setPriceRange] = useState('all')
   const [items, setItems] = useState([
     {
       id: 1,
-      name: 'Vintage Brass Table Lamp',
-      price: 75,
-      category: 'lighting',
-      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Sarah Chen',
-      location: 'San Francisco, CA',
-      rating: 4.8,
-      description: 'Beautiful vintage brass table lamp with original shade',
+      name: 'Vintage Ceramic Vase',
+      price: 25,
+      category: 'decor',
       condition: 'Excellent',
-      isWishlisted: false
+      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'Sarah M.',
+      description: 'Beautiful handcrafted ceramic vase, perfect for fresh flowers.',
+      isRequested: false
     },
     {
       id: 2,
-      name: 'Mid-Century Modern Bookshelf',
-      price: 150,
-      category: 'furniture',
-      image: 'https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Mike Johnson',
-      location: 'Portland, OR',
-      rating: 4.9,
-      description: 'Solid wood bookshelf in excellent condition',
-      condition: 'Very Good',
-      isWishlisted: false
+      name: 'Handmade Wall Clock',
+      price: 45,
+      category: 'decor',
+      condition: 'Good',
+      image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'Mike R.',
+      description: 'Unique wooden wall clock with Roman numerals.',
+      isRequested: false
     },
     {
       id: 3,
-      name: 'Ceramic Plant Pot Set',
-      price: 35,
-      category: 'plants',
-      image: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Emma Davis',
-      location: 'Austin, TX',
-      rating: 4.7,
-      description: 'Set of 3 ceramic plant pots with saucers',
-      condition: 'Like New',
-      isWishlisted: true
+      name: 'Rustic Picture Frame',
+      price: 18,
+      category: 'decor',
+      condition: 'Very Good',
+      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'Emma K.',
+      description: 'Distressed wooden frame, adds character to any photo.',
+      isRequested: false
     },
     {
       id: 4,
-      name: 'Handwoven Wall Tapestry',
-      price: 85,
-      category: 'textiles',
-      image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Luna Martinez',
-      location: 'Denver, CO',
-      rating: 4.6,
-      description: 'Beautiful handwoven tapestry with geometric patterns',
-      condition: 'Excellent',
-      isWishlisted: false
+      name: 'Modern Table Lamp',
+      price: 65,
+      category: 'lighting',
+      condition: 'Like New',
+      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'David L.',
+      description: 'Contemporary design with adjustable brightness.',
+      isRequested: false
     },
     {
       id: 5,
-      name: 'Vintage Mirror with Ornate Frame',
-      price: 120,
-      category: 'decor',
-      image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Robert Kim',
-      location: 'Seattle, WA',
-      rating: 4.8,
-      description: 'Ornate vintage mirror perfect for any room',
+      name: 'Woven Storage Basket',
+      price: 30,
+      category: 'storage',
       condition: 'Good',
-      isWishlisted: false
+      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'Lisa P.',
+      description: 'Natural fiber basket, great for organizing or decoration.',
+      isRequested: false
     },
     {
       id: 6,
-      name: 'Abstract Canvas Painting',
-      price: 65,
-      category: 'artwork',
-      image: 'https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Artist Collective',
-      location: 'Los Angeles, CA',
-      rating: 4.5,
-      description: 'Original abstract canvas painting',
-      condition: 'New',
-      isWishlisted: false
+      name: 'Antique Mirror',
+      price: 120,
+      category: 'furniture',
+      condition: 'Good',
+      image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=400',
+      seller: 'Robert S.',
+      description: 'Ornate vintage mirror with detailed frame work.',
+      isRequested: false
     }
-  ]);
+  ])
 
-  const filteredItems = items.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
-    
-    let matchesPrice = true;
-    if (priceRange !== 'all') {
-      const [min, max] = priceRange.split('-').map(p => p.replace('+', ''));
-      if (max) {
-        matchesPrice = item.price >= parseInt(min) && item.price <= parseInt(max);
-      } else {
-        matchesPrice = item.price >= parseInt(min);
-      }
-    }
-    
-    return matchesSearch && matchesCategory && matchesPrice;
-  });
+  const categories = [
+    { id: 'all', name: 'All Categories' },
+    { id: 'decor', name: 'Home Decor' },
+    { id: 'furniture', name: 'Furniture' },
+    { id: 'lighting', name: 'Lighting' },
+    { id: 'storage', name: 'Storage' }
+  ]
 
-  const sortedItems = [...filteredItems].sort((a, b) => {
-    switch (sortBy) {
-      case 'price-low':
-        return a.price - b.price;
-      case 'price-high':
-        return b.price - a.price;
-      case 'rating':
-        return b.rating - a.rating;
-      case 'name':
-        return a.name.localeCompare(b.name);
-      default:
-        return b.id - a.id; // newest first
-    }
-  });
-
-  const handleWishlistToggle = (itemId) => {
-    setItems(prev => prev.map(item => 
-      item.id === itemId 
-        ? { ...item, isWishlisted: !item.isWishlisted }
-        : item
-    ));
-    
-    const item = items.find(i => i.id === itemId);
-    if (item.isWishlisted) {
-      alert(`${item.name} removed from wishlist!`);
-    } else {
-      alert(`${item.name} added to wishlist!`);
-    }
-  };
+  const priceRanges = [
+    { id: 'all', name: 'All Prices' },
+    { id: '0-25', name: '$0 - $25' },
+    { id: '26-50', name: '$26 - $50' },
+    { id: '51-100', name: '$51 - $100' },
+    { id: '100+', name: '$100+' }
+  ]
 
   const handleRequestItem = (itemId) => {
-    const item = items.find(i => i.id === itemId);
-    alert(`Request submitted for ${item.name}! The seller will be notified.`);
-  };
+    setItems(items.map(item => 
+      item.id === itemId 
+        ? { ...item, isRequested: true }
+        : item
+    ))
+    alert(`Request sent for item ${itemId}!`)
+  }
+
+  const handleSaveItem = (itemId) => {
+    alert(`Item ${itemId} saved to your wishlist!`)
+  }
+
+  const filteredItems = items.filter(item => {
+    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory
+    const matchesPrice = priceRange === 'all' || 
+      (priceRange === '0-25' && item.price <= 25) ||
+      (priceRange === '26-50' && item.price >= 26 && item.price <= 50) ||
+      (priceRange === '51-100' && item.price >= 51 && item.price <= 100) ||
+      (priceRange === '100+' && item.price > 100)
+    
+    return matchesSearch && matchesCategory && matchesPrice
+  })
 
   return (
-    <div className="browse-items">
+    <div className="space-y-6">
       {/* Header */}
-      <div className="browse-header">
-        <h1 className="browse-title">Browse Items</h1>
-        <p className="browse-subtitle">Discover unique home decorative items from eco-conscious sellers</p>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+          Browse Items
+        </h1>
+        <div className="text-sm text-gray-600">
+          Showing {filteredItems.length} of {items.length} items
+        </div>
       </div>
 
-      {/* Search and Filters */}
-      <div className="search-filter-section">
-        <div className="search-bar">
-          <Search className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search for items..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-        </div>
+      {/* Filters */}
+      <div className="card p-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Search */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
+            <input
+              type="text"
+              placeholder="Search items..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            />
+          </div>
 
-        <div className="filter-controls">
-          <button
-            className="filter-toggle-btn"
-            onClick={() => setShowFilters(!showFilters)}
-          >
-            <Filter size={20} />
-            Filters
-          </button>
+          {/* Category Filter */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+            >
+              {categories.map(category => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-          <div className="view-toggle">
-            <button
-              className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
-              onClick={() => setViewMode('grid')}
+          {/* Price Filter */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+            <select
+              value={priceRange}
+              onChange={(e) => setPriceRange(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
             >
-              <Grid size={20} />
-            </button>
-            <button
-              className={`view-btn ${viewMode === 'list' ? 'active' : ''}`}
-              onClick={() => setViewMode('list')}
-            >
-              <List size={20} />
-            </button>
+              {priceRanges.map(range => (
+                <option key={range.id} value={range.id}>
+                  {range.name}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
       </div>
 
-      {/* Filters Panel */}
-      <div className={`filters-panel ${showFilters ? 'active' : ''}`}>
-        <div className="filter-group">
-          <label className="filter-label">Category</label>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="filter-select"
-          >
-            {categories.map(category => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="filter-group">
-          <label className="filter-label">Price Range</label>
-          <select
-            value={priceRange}
-            onChange={(e) => setPriceRange(e.target.value)}
-            className="filter-select"
-          >
-            {priceRanges.map(range => (
-              <option key={range.id} value={range.id}>
-                {range.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="filter-group">
-          <label className="filter-label">Sort By</label>
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className="filter-select"
-          >
-            <option value="newest">Newest First</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Highest Rated</option>
-            <option value="name">Name A-Z</option>
-          </select>
-        </div>
-      </div>
-
-      {/* Results Info */}
-      <div className="results-info">
-        <p className="results-count">
-          Showing {sortedItems.length} of {items.length} items
-        </p>
-      </div>
-
-      {/* Items Grid/List */}
-      <div className={`items-container ${viewMode}`}>
-        {sortedItems.map(item => (
-          <div key={item.id} className={`item-card ${viewMode}`}>
-            <div className="item-image-wrapper">
-              <img src={item.image} alt={item.name} className="item-image" />
+      {/* Items Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredItems.map((item) => (
+          <div key={item.id} className="card p-4">
+            <div className="relative mb-4">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-48 object-cover rounded-lg"
+              />
               <button
-                className={`wishlist-btn ${item.isWishlisted ? 'active' : ''}`}
-                onClick={() => handleWishlistToggle(item.id)}
+                onClick={() => handleSaveItem(item.id)}
+                className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors duration-200"
               >
-                <Heart size={20} />
+                ❤️
               </button>
             </div>
 
-            <div className="item-content">
-              <div className="item-header">
-                <h3 className="item-name">{item.name}</h3>
-                <p className="item-price">${item.price}</p>
+            <div className="space-y-3">
+              <div>
+                <h3 className="font-semibold text-gray-800 text-lg">{item.name}</h3>
+                <p className="text-gray-600 text-sm">By {item.seller}</p>
               </div>
 
-              <p className="item-description">{item.description}</p>
+              <p className="text-gray-700 text-sm">{item.description}</p>
 
-              <div className="item-meta">
-                <div className="seller-info">
-                  <p className="seller-name">{item.seller}</p>
-                  <div className="rating">
-                    <Star size={14} className="star-filled" />
-                    <span>{item.rating}</span>
-                  </div>
-                </div>
-                <div className="location-info">
-                  <MapPin size={14} />
-                  <span>{item.location}</span>
-                </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="bg-gray-100 px-2 py-1 rounded">
+                  {item.condition}
+                </span>
+                <span className="text-xl font-bold text-primary-600">${item.price}</span>
               </div>
 
-              <div className="item-condition">
-                <span className="condition-label">Condition:</span>
-                <span className="condition-value">{item.condition}</span>
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => handleRequestItem(item.id)}
+                  disabled={item.isRequested}
+                  className={`flex-1 py-2 px-4 rounded-lg font-medium transition-colors duration-200 ${
+                    item.isRequested
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'btn-primary'
+                  }`}
+                >
+                  {item.isRequested ? 'Requested' : 'Request Item'}
+                </button>
+                <button className="btn-secondary px-4">
+                  <span onClick={() => alert(`Viewing details for ${item.name}`)}>
+                    View Details
+                  </span>
+                </button>
               </div>
-
-              <button
-                className="request-btn"
-                onClick={() => handleRequestItem(item.id)}
-              >
-                Request Item
-              </button>
             </div>
           </div>
         ))}
       </div>
 
-      {sortedItems.length === 0 && (
-        <div className="no-results">
-          <p>No items found matching your criteria.</p>
-          <p>Try adjusting your search or filters.</p>
+      {filteredItems.length === 0 && (
+        <div className="text-center py-12">
+          <div className="text-6xl mb-4">🔍</div>
+          <h3 className="text-xl font-semibold text-gray-800 mb-2">No items found</h3>
+          <p className="text-gray-600">Try adjusting your filters or search terms.</p>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default BrowseItems;
+export default BrowseItems

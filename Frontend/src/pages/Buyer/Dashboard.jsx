@@ -1,182 +1,190 @@
-import React, { useState, useEffect } from 'react';
-import { TrendingUp, ShoppingBag, Heart, Users, ArrowRight, Star } from 'lucide-react';
-import './Dashboard.css';
+import { useState, useEffect } from 'react'
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
-    totalRequests: 15,
-    approvedRequests: 8,
-    wishlistItems: 23,
-    savedSellers: 12
-  });
+    totalRequests: 12,
+    pendingRequests: 5,
+    completedPurchases: 7,
+    savedItems: 23
+  })
 
-  const [recentActivity, setRecentActivity] = useState([
-    { id: 1, action: 'Request approved', item: 'Vintage Ceramic Vase', time: '2 hours ago', status: 'approved' },
-    { id: 2, action: 'New item added to wishlist', item: 'Mid-Century Coffee Table', time: '5 hours ago', status: 'wishlist' },
-    { id: 3, action: 'Request submitted', item: 'Handwoven Wall Hanging', time: '1 day ago', status: 'pending' },
-    { id: 4, action: 'Request approved', item: 'Antique Mirror Frame', time: '2 days ago', status: 'approved' },
-  ]);
-
-  const [featuredItems, setFeaturedItems] = useState([
+  const [recentItems, setRecentItems] = useState([
     {
       id: 1,
-      name: 'Bohemian Floor Lamp',
-      price: '$85',
-      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Sarah Chen',
-      rating: 4.8,
-      location: 'San Francisco, CA'
+      name: 'Vintage Ceramic Vase',
+      price: 25,
+      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=300',
+      seller: 'Sarah M.',
+      status: 'available'
     },
     {
       id: 2,
-      name: 'Rustic Wooden Bookshelf',
-      price: '$120',
-      image: 'https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Mike Johnson',
-      rating: 4.9,
-      location: 'Portland, OR'
+      name: 'Handmade Wall Clock',
+      price: 45,
+      image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=300',
+      seller: 'Mike R.',
+      status: 'available'
     },
     {
       id: 3,
-      name: 'Vintage Plant Stand',
-      price: '$45',
-      image: 'https://images.pexels.com/photos/1005058/pexels-photo-1005058.jpeg?auto=compress&cs=tinysrgb&w=400',
-      seller: 'Emma Davis',
-      rating: 4.7,
-      location: 'Austin, TX'
+      name: 'Rustic Picture Frame',
+      price: 18,
+      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=300',
+      seller: 'Emma K.',
+      status: 'available'
     }
-  ]);
+  ])
 
   const handleRequestItem = (itemId) => {
-    alert(`Request submitted for item ${itemId}! The seller will be notified.`);
-    setStats(prev => ({ ...prev, totalRequests: prev.totalRequests + 1 }));
-  };
-
-  const handleAddToWishlist = (itemId) => {
-    alert(`Item ${itemId} added to your wishlist!`);
-    setStats(prev => ({ ...prev, wishlistItems: prev.wishlistItems + 1 }));
-  };
+    alert(`Request sent for item ${itemId}!`)
+    setStats(prev => ({
+      ...prev,
+      totalRequests: prev.totalRequests + 1,
+      pendingRequests: prev.pendingRequests + 1
+    }))
+  }
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-header">
-        <h1 className="dashboard-title">Welcome back to EcoSwap!</h1>
-        <p className="dashboard-subtitle">Discover unique home decorative items from fellow eco-conscious sellers.</p>
+    <div className="space-y-6">
+      {/* Welcome Section */}
+      <div className="bg-gradient-to-r from-primary-600 to-primary-500 rounded-lg p-6 text-white">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">Welcome back, John!</h1>
+        <p className="text-primary-50">Discover unique home decor items and make sustainable choices.</p>
       </div>
 
       {/* Stats Cards */}
-      <div className="stats-grid">
-        <div className="stat-card">
-          <div className="stat-icon-wrapper requests">
-            <ShoppingBag className="stat-icon" />
-          </div>
-          <div className="stat-content">
-            <h3 className="stat-number">{stats.totalRequests}</h3>
-            <p className="stat-label">Total Requests</p>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <div className="stat-icon-wrapper approved">
-            <TrendingUp className="stat-icon" />
-          </div>
-          <div className="stat-content">
-            <h3 className="stat-number">{stats.approvedRequests}</h3>
-            <p className="stat-label">Approved Requests</p>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="card p-6">
+          <div className="flex items-center">
+            <div className="p-3 bg-blue-100 rounded-lg">
+              <span className="text-2xl">📊</span>
+            </div>
+            <div className="ml-4">
+              <p className="text-sm text-gray-600">Total Requests</p>
+              <p className="text-2xl font-bold text-gray-800">{stats.totalRequests}</p>
+            </div>
           </div>
         </div>
 
-        <div className="stat-card">
-          <div className="stat-icon-wrapper wishlist">
-            <Heart className="stat-icon" />
-          </div>
-          <div className="stat-content">
-            <h3 className="stat-number">{stats.wishlistItems}</h3>
-            <p className="stat-label">Wishlist Items</p>
+        <div className="card p-6">
+          <div className="flex items-center">
+            <div className="p-3 bg-yellow-100 rounded-lg">
+              <span className="text-2xl">⏳</span>
+            </div>
+            <div className="ml-4">
+              <p className="text-sm text-gray-600">Pending</p>
+              <p className="text-2xl font-bold text-gray-800">{stats.pendingRequests}</p>
+            </div>
           </div>
         </div>
 
-        <div className="stat-card">
-          <div className="stat-icon-wrapper sellers">
-            <Users className="stat-icon" />
+        <div className="card p-6">
+          <div className="flex items-center">
+            <div className="p-3 bg-green-100 rounded-lg">
+              <span className="text-2xl">✅</span>
+            </div>
+            <div className="ml-4">
+              <p className="text-sm text-gray-600">Completed</p>
+              <p className="text-2xl font-bold text-gray-800">{stats.completedPurchases}</p>
+            </div>
           </div>
-          <div className="stat-content">
-            <h3 className="stat-number">{stats.savedSellers}</h3>
-            <p className="stat-label">Saved Sellers</p>
+        </div>
+
+        <div className="card p-6">
+          <div className="flex items-center">
+            <div className="p-3 bg-red-100 rounded-lg">
+              <span className="text-2xl">❤️</span>
+            </div>
+            <div className="ml-4">
+              <p className="text-sm text-gray-600">Saved Items</p>
+              <p className="text-2xl font-bold text-gray-800">{stats.savedItems}</p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="dashboard-content">
-        {/* Recent Activity */}
-        <div className="section">
-          <div className="section-header">
-            <h2 className="section-title">Recent Activity</h2>
-            <button className="view-all-btn">
-              View All <ArrowRight size={16} />
-            </button>
-          </div>
-          <div className="activity-list">
-            {recentActivity.map((activity) => (
-              <div key={activity.id} className="activity-item">
-                <div className={`activity-status ${activity.status}`}></div>
-                <div className="activity-content">
-                  <p className="activity-action">{activity.action}</p>
-                  <p className="activity-item-name">{activity.item}</p>
-                  <p className="activity-time">{activity.time}</p>
-                </div>
+      {/* Recent Items */}
+      <div className="card p-6">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-xl font-bold text-gray-800">Recently Added Items</h2>
+          <button className="text-primary hover:text-primary-dark font-medium">
+            View All →
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {recentItems.map((item) => (
+            <div key={item.id} className="card p-4">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h3 className="font-semibold text-gray-800 mb-2">{item.name}</h3>
+              <p className="text-gray-600 mb-2">By {item.seller}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-xl font-bold text-primary-600">${item.price}</span>
+                <button
+                  onClick={() => handleRequestItem(item.id)}
+                  className="btn-primary text-sm px-3 py-1"
+                >
+                  Request
+                </button>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="card p-6">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
+          <div className="space-y-3">
+            <button 
+              onClick={() => alert('Navigating to Browse Items...')}
+              className="w-full btn-primary justify-start flex items-center"
+            >
+              <span className="mr-2">🔍</span>
+              Browse New Items
+            </button>
+            <button 
+              onClick={() => alert('Navigating to My Requests...')}
+              className="w-full btn-secondary justify-start flex items-center"
+            >
+              <span className="mr-2">📋</span>
+              View My Requests
+            </button>
+            <button 
+              onClick={() => alert('Navigating to Profile...')}
+              className="w-full btn-secondary justify-start flex items-center"
+            >
+              <span className="mr-2">⚙️</span>
+              Update Profile
+            </button>
           </div>
         </div>
 
-        {/* Featured Items */}
-        <div className="section">
-          <div className="section-header">
-            <h2 className="section-title">Featured Items Near You</h2>
-            <button className="view-all-btn">
-              Browse All <ArrowRight size={16} />
-            </button>
-          </div>
-          <div className="featured-grid">
-            {featuredItems.map((item) => (
-              <div key={item.id} className="featured-item-card">
-                <div className="item-image-wrapper">
-                  <img src={item.image} alt={item.name} className="item-image" />
-                  <button
-                    className="wishlist-btn"
-                    onClick={() => handleAddToWishlist(item.id)}
-                  >
-                    <Heart size={20} />
-                  </button>
-                </div>
-                <div className="item-details">
-                  <h3 className="item-name">{item.name}</h3>
-                  <p className="item-price">{item.price}</p>
-                  <div className="seller-info">
-                    <div className="seller-details">
-                      <p className="seller-name">{item.seller}</p>
-                      <div className="rating">
-                        <Star size={14} className="star-filled" />
-                        <span>{item.rating}</span>
-                      </div>
-                    </div>
-                    <p className="seller-location">{item.location}</p>
-                  </div>
-                  <button
-                    className="request-btn"
-                    onClick={() => handleRequestItem(item.id)}
-                  >
-                    Request Item
-                  </button>
-                </div>
-              </div>
-            ))}
+        <div className="card p-6">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h3>
+          <div className="space-y-4">
+            <div className="flex items-center text-sm">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+              <span>Request approved for Vintage Mirror</span>
+            </div>
+            <div className="flex items-center text-sm">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+              <span>New item saved: Modern Table Lamp</span>
+            </div>
+            <div className="flex items-center text-sm">
+              <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+              <span>Request pending for Garden Planter</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
