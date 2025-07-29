@@ -31,6 +31,13 @@ function App() {
           <Route path="/seller/analytics" element={<Analytics />} />
           <Route path="/seller/messages" element={<Messages />} />
           <Route path="/seller/settings" element={<Settings />} />
+
+
+
+
+          {/* Buyer  */}
+           <Route path="/buyer" element={<Navigate to="/buyer/dashboard" replace />} />
+          <Route path="/buyer/*" element={<BuyerComponent />} />
         </Routes>
       </div>
     </Router>
