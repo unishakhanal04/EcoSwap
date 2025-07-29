@@ -1,40 +1,22 @@
-
-import React, { useState } from 'react';
-import Layout from './components/Seller/common/Layout';
-import Dashboard from './pages/Dashboard';
-import Listings from './pages/Listings';
-import Orders from './pages/Orders';
-import Analytics from './pages/Analytics';
-import Notifications from './pages/Notifications';
-import Settings from './pages/Settings';
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import './styles/App.css'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'dashboard':
-        return <Dashboard />;
-      case 'listings':
-        return <Listings />;
-      case 'orders':
-        return <Orders />;
-      case 'analytics':
-        return <Analytics />;
-      case 'notifications':
-        return <Notifications />;
-      case 'settings':
-        return <Settings />;
-      default:
-        return <Dashboard />;
-    }
-  };
-
   return (
-    <Layout activeTab={activeTab} onTabChange={setActiveTab}>
-      {renderContent()}
-    </Layout>
-  );
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* We'll add more routes later */}
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App
