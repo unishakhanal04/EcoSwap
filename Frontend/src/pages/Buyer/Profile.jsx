@@ -82,161 +82,77 @@ const Profile = () => {
     { id: 'textiles', name: 'Textiles' }
   ]
 
+  const inputClass = "w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-2 focus:ring-primary-500 focus:outline-none transition"
+
+  const buttonClass = "px-4 py-2 rounded-lg font-medium transition"
+  const primaryBtn = `${buttonClass} bg-primary-600 text-white hover:bg-primary-700`
+  const secondaryBtn = `${buttonClass} bg-gray-100 text-gray-800 hover:bg-gray-200`
+  const dangerBtn = `${buttonClass} bg-red-100 text-red-600 hover:bg-red-200`
+
   return (
-    <div className="space-y-6">
+    <div className="max-w-6xl mx-auto p-6 space-y-8">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 md:mb-0">
-          My Profile
-        </h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4 md:mb-0">My Profile</h1>
         <div className="flex space-x-3">
           {!isEditing ? (
-            <button onClick={handleEdit} className="btn-primary">
-              Edit Profile
+            <button onClick={handleEdit} className={primaryBtn}>
+              ✏️ Edit Profile
             </button>
           ) : (
             <>
-              <button onClick={handleSave} className="btn-primary">
-                Save Changes
+              <button onClick={handleSave} className={primaryBtn}>
+                ✅ Save Changes
               </button>
-              <button onClick={handleCancel} className="btn-secondary">
-                Cancel
+              <button onClick={handleCancel} className={secondaryBtn}>
+                ❌ Cancel
               </button>
             </>
           )}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Profile Info */}
-        <div className="lg:col-span-2 space-y-6">
-          {/* Personal Information */}
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-6">Personal Information</h2>
-            
+      {/* Main Content */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Section */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* Personal Info */}
+          <div className="bg-white shadow-lg rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-6">👤 Personal Information</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  First Name
-                </label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={tempProfile.firstName}
-                    onChange={(e) => handleInputChange('firstName', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.firstName}</p>
-                )}
-              </div>
+              {[
+                ['firstName', 'First Name'],
+                ['lastName', 'Last Name'],
+                ['email', 'Email'],
+                ['phone', 'Phone'],
+                ['address', 'Address'],
+                ['city', 'City'],
+                ['state', 'State']
+              ].map(([key, label]) => (
+                <div key={key} className={key === 'address' ? 'md:col-span-2' : ''}>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={tempProfile[key]}
+                      onChange={e => handleInputChange(key, e.target.value)}
+                      className={inputClass}
+                    />
+                  ) : (
+                    <p className="text-gray-800">{profile[key]}</p>
+                  )}
+                </div>
+              ))}
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Last Name
-                </label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={tempProfile.lastName}
-                    onChange={(e) => handleInputChange('lastName', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.lastName}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email
-                </label>
-                {isEditing ? (
-                  <input
-                    type="email"
-                    value={tempProfile.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.email}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone
-                </label>
-                {isEditing ? (
-                  <input
-                    type="tel"
-                    value={tempProfile.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.phone}</p>
-                )}
-              </div>
-
+              {/* Bio */}
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Address
-                </label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={tempProfile.address}
-                    onChange={(e) => handleInputChange('address', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.address}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  City
-                </label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={tempProfile.city}
-                    onChange={(e) => handleInputChange('city', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.city}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  State
-                </label>
-                {isEditing ? (
-                  <input
-                    type="text"
-                    value={tempProfile.state}
-                    onChange={(e) => handleInputChange('state', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  />
-                ) : (
-                  <p className="text-gray-800">{profile.state}</p>
-                )}
-              </div>
-
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Bio
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Bio</label>
                 {isEditing ? (
                   <textarea
+                    rows={3}
                     value={tempProfile.bio}
                     onChange={(e) => handleInputChange('bio', e.target.value)}
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
+                    className={inputClass}
                   />
                 ) : (
                   <p className="text-gray-800">{profile.bio}</p>
@@ -246,187 +162,116 @@ const Profile = () => {
           </div>
 
           {/* Preferences */}
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-6">Shopping Preferences</h2>
-            
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Interested Categories
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {categories.map(category => (
-                    <label key={category.id} className="flex items-center">
-                      <input
-                        type="checkbox"
-                        checked={tempProfile.preferences.categories.includes(category.id)}
-                        onChange={(e) => {
-                          const newCategories = e.target.checked
-                            ? [...tempProfile.preferences.categories, category.id]
-                            : tempProfile.preferences.categories.filter(c => c !== category.id)
-                          handlePreferenceChange('categories', newCategories)
-                        }}
-                        disabled={!isEditing}
-                        className="mr-2 rounded border-gray-300 text-primary-600 focus:ring-primary-600"
-                      />
-                      <span className="text-gray-700">{category.name}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
+          <div className="bg-white shadow-lg rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-6">🛍️ Shopping Preferences</h2>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Price Range
-                </label>
-                {isEditing ? (
-                  <select
-                    value={tempProfile.preferences.priceRange}
-                    onChange={(e) => handlePreferenceChange('priceRange', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent"
-                  >
-                    <option value="0-50">$0 - $50</option>
-                    <option value="0-100">$0 - $100</option>
-                    <option value="0-200">$0 - $200</option>
-                    <option value="100+">$100+</option>
-                  </select>
-                ) : (
-                  <p className="text-gray-800">${tempProfile.preferences.priceRange}</p>
-                )}
+            {/* Categories */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Interested Categories</label>
+              <div className="flex flex-wrap gap-3">
+                {categories.map(category => (
+                  <label key={category.id} className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      disabled={!isEditing}
+                      checked={tempProfile.preferences.categories.includes(category.id)}
+                      onChange={(e) => {
+                        const updated = e.target.checked
+                          ? [...tempProfile.preferences.categories, category.id]
+                          : tempProfile.preferences.categories.filter(c => c !== category.id)
+                        handlePreferenceChange('categories', updated)
+                      }}
+                      className="accent-primary-600"
+                    />
+                    <span>{category.name}</span>
+                  </label>
+                ))}
               </div>
+            </div>
+
+            {/* Price Range */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+              {isEditing ? (
+                <select
+                  value={tempProfile.preferences.priceRange}
+                  onChange={(e) => handlePreferenceChange('priceRange', e.target.value)}
+                  className={inputClass}
+                >
+                  <option value="0-50">$0 - $50</option>
+                  <option value="0-100">$0 - $100</option>
+                  <option value="0-200">$0 - $200</option>
+                  <option value="100+">$100+</option>
+                </select>
+              ) : (
+                <p className="text-gray-800">${profile.preferences.priceRange}</p>
+              )}
             </div>
           </div>
 
           {/* Notifications */}
-          <div className="card p-6">
-            <h2 className="text-xl font-semibold text-gray-800 mb-6">Notification Settings</h2>
-            
+          <div className="bg-white shadow-lg rounded-xl p-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-6">🔔 Notification Settings</h2>
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-800">Email Notifications</h3>
-                  <p className="text-sm text-gray-600">Receive notifications via email</p>
-                </div>
-                <label className="relative inline-flex items-center cursor-pointer">
+              {Object.entries(profile.preferences.notifications).map(([key, val]) => (
+                <div key={key} className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-gray-800 capitalize">{key.replace(/([A-Z])/g, ' $1')}</p>
+                    <p className="text-sm text-gray-600">
+                      {key === 'newItems'
+                        ? 'Get notified when new items match your preferences'
+                        : key === 'requestUpdates'
+                        ? 'Get updates about your request status'
+                        : `Receive via ${key}`}
+                    </p>
+                  </div>
                   <input
                     type="checkbox"
-                    checked={tempProfile.preferences.notifications.email}
-                    onChange={(e) => handleNotificationChange('email', e.target.checked)}
+                    className="w-6 h-6 accent-primary-600"
                     disabled={!isEditing}
-                    className="sr-only peer"
+                    checked={tempProfile.preferences.notifications[key]}
+                    onChange={(e) => handleNotificationChange(key, e.target.checked)}
                   />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-600/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
-                </label>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-800">SMS Notifications</h3>
-                  <p className="text-sm text-gray-600">Receive notifications via text message</p>
                 </div>
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={tempProfile.preferences.notifications.sms}
-                    onChange={(e) => handleNotificationChange('sms', e.target.checked)}
-                    disabled={!isEditing}
-                    className="sr-only peer"
-                  />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-600/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
-                </label>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-800">New Items</h3>
-                  <p className="text-sm text-gray-600">Get notified when new items match your preferences</p>
-                </div>
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={tempProfile.preferences.notifications.newItems}
-                    onChange={(e) => handleNotificationChange('newItems', e.target.checked)}
-                    disabled={!isEditing}
-                    className="sr-only peer"
-                  />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-600/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
-                </label>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-800">Request Updates</h3>
-                  <p className="text-sm text-gray-600">Get notified about your request status changes</p>
-                </div>
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={tempProfile.preferences.notifications.requestUpdates}
-                    onChange={(e) => handleNotificationChange('requestUpdates', e.target.checked)}
-                    disabled={!isEditing}
-                    className="sr-only peer"
-                  />
-                  <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-600/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-600"></div>
-                </label>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Profile Summary */}
+        {/* Right Sidebar */}
         <div className="space-y-6">
           {/* Profile Card */}
-          <div className="card p-6 text-center">
-            <div className="w-24 h-24 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+          <div className="bg-white shadow-xl rounded-xl p-6 text-center">
+            <div className="w-24 h-24 mx-auto rounded-full bg-primary-600 text-white flex items-center justify-center text-3xl font-bold shadow-md mb-4">
               {profile.firstName[0]}{profile.lastName[0]}
             </div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-2">
-              {profile.firstName} {profile.lastName}
-            </h3>
-            <p className="text-gray-600 mb-4">{profile.email}</p>
-            <div className="text-sm text-gray-500">
-              Member since {new Date(profile.joinDate).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long' 
-              })}
-            </div>
+            <h3 className="text-xl font-semibold text-gray-900">{profile.firstName} {profile.lastName}</h3>
+            <p className="text-gray-600 mb-2">{profile.email}</p>
+            <p className="text-sm text-gray-500">Member since {new Date(profile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
           </div>
 
           {/* Account Actions */}
-          <div className="card p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Account Actions</h3>
+          <div className="bg-white shadow-xl rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-4">⚙️ Account Actions</h3>
             <div className="space-y-3">
-              <button 
-                onClick={() => alert('Opening change password dialog...')}
-                className="w-full btn-secondary text-left flex items-center"
-              >
-                <span className="mr-2">🔒</span>
-                Change Password
+              <button onClick={() => alert('Opening change password dialog...')} className={secondaryBtn + " w-full text-left"}>
+                🔒 Change Password
               </button>
-              <button 
-                onClick={() => alert('Opening email update form...')}
-                className="w-full btn-secondary text-left flex items-center"
-              >
-                <span className="mr-2">📧</span>
-                Update Email
+              <button onClick={() => alert('Opening email update form...')} className={secondaryBtn + " w-full text-left"}>
+                📧 Update Email
               </button>
-              <button 
-                onClick={() => alert('Sending verification SMS...')}
-                className="w-full btn-secondary text-left flex items-center"
-              >
-                <span className="mr-2">📱</span>
-                Verify Phone Number
+              <button onClick={() => alert('Sending verification SMS...')} className={secondaryBtn + " w-full text-left"}>
+                📱 Verify Phone Number
               </button>
-              <button 
+              <button
                 onClick={() => {
                   if (window.confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
                     alert('Account deletion process initiated...')
                   }
                 }}
-                className="w-full text-red-600 bg-red-50 hover:bg-red-100 font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-left flex items-center"
+                className={dangerBtn + " w-full text-left"}
               >
-                <span className="mr-2">🗑️</span>
-                Delete Account
+                🗑️ Delete Account
               </button>
             </div>
           </div>

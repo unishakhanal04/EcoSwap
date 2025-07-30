@@ -25,7 +25,7 @@ const SellerNavigation = () => {
     { path: '/seller/add-item', icon: Plus, label: 'Add Item' },
     { path: '/seller/my-items', icon: Package, label: 'My Items' },
     { path: '/seller/analytics', icon: BarChart3, label: 'Analytics' },
-    { path: '/seller/messages', icon: MessageSquare, label: 'Messages' },
+    { path: '/seller/request', icon: MessageSquare, label: 'Request' },
     { path: '/seller/settings', icon: Settings, label: 'Settings' },
   ];
 

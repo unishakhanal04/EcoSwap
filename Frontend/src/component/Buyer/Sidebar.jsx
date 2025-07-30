@@ -3,6 +3,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
     { id: 'dashboard', name: 'Dashboard', icon: '🏠' },
     { id: 'browse', name: 'Browse Items', icon: '🔍' },
     { id: 'requests', name: 'My Requests', icon: '📋' },
+    { id: 'wishlist', name: 'Wishlist', icon: '💖' }, // ✅ Wishlist added here
     { id: 'profile', name: 'Profile', icon: '👤' },
   ]
 
@@ -21,7 +22,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
           {/* Logo */}
           <div className="flex items-center justify-center p-6 border-b border-gray-200">
             <div className="flex items-center">
-              <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white font-bold mr-3">
+              <div className="w-8 h-8 bg-[#007f66] rounded-lg flex items-center justify-center text-white font-bold mr-3">
                 E
               </div>
               <span className="text-xl font-bold text-gray-800">EcoSwap</span>
@@ -38,7 +39,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
                     className={`
                       w-full flex items-center px-4 py-3 text-left rounded-lg transition-colors duration-200
                       ${currentPage === item.id 
-                        ? 'bg-primary-600 text-white' 
+                        ? 'bg-[#007f66] text-white' 
                         : 'text-gray-700 hover:bg-gray-100'
                       }
                     `}
@@ -54,7 +55,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
           {/* User Info */}
           <div className="p-4 border-t border-gray-200">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center text-white font-semibold">
+              <div className="w-10 h-10 bg-[#007f66] rounded-full flex items-center justify-center text-white font-semibold">
                 JD
               </div>
               <div className="ml-3">
@@ -63,10 +64,12 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
               </div>
             </div>
           </div>
+
+          
         </div>
       </div>
     </>
   )
 }
 
-export default Sidebar
+export default Sidebar;

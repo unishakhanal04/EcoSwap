@@ -1,5 +1,4 @@
 import React from "react";
-import { MessageSquareIcon } from "lucide-react";
 
 const dummyRequests = [
   {
@@ -59,8 +58,8 @@ const RequestPage = () => {
                     <p className="text-xs text-gray-400 mt-1">{req.time}</p>
                   </div>
                 </div>
-                <button className="mt-4 md:mt-0 w-full sm:w-auto flex items-center justify-center gap-2 bg-[#007f66] hover:bg-[#006655] text-white px-4 py-2 rounded-md text-sm transition">
-                  <MessageSquareIcon size={16} /> Respond
+                <button className="mt-4 md:mt-0 w-full text-black sm:w-auto flex items-center justify-center gap-2 bg-[#FFFFE0] hover:bg-[#FFFFE0]  px-4 py-2 rounded-md text-sm transition">
+                 pending
                 </button>
               </div>
             ))}
