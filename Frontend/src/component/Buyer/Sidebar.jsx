@@ -5,6 +5,8 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
     { id: 'requests', name: 'My Requests', icon: '📋' },
     { id: 'wishlist', name: 'Wishlist', icon: '💖' }, // ✅ Wishlist added here
     { id: 'profile', name: 'Profile', icon: '👤' },
+      { id: 'review', name: 'Review', icon: '📦'},
+      
   ]
 
   const handleMenuClick = (pageId) => {
@@ -51,6 +53,19 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
               ))}
             </ul>
           </nav>
+           {/* Logout Button */}
+<div className="p-4">
+  <button
+    onClick={() => {
+      // Add your logout logic here
+      console.log('Logging out...');
+    }}
+    className="w-full flex items-center justify-center bg-red-200 text-red-700 py-2 px-4 rounded-lg hover:bg-red-300 transition"
+  >
+    <span className="mr-2 text-lg">🔓</span> Logout
+  </button>
+</div>
+
 
           {/* User Info */}
           <div className="p-4 border-t border-gray-200">
@@ -68,6 +83,7 @@ const Sidebar = ({ currentPage, setCurrentPage, isOpen, setIsOpen }) => {
           
         </div>
       </div>
+      
     </>
   )
 }

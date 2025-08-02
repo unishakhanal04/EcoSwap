@@ -11,6 +11,7 @@ const Sidebar = ({ currentPage, setCurrentPage, sidebarOpen, setSidebarOpen }) =
     { id: 'buyers', name: 'Buyers', icon: Users },
     { id: 'sellers', name: 'Sellers', icon: ShoppingBag },
     { id: 'analytics', name: 'analytics', icon: LayoutDashboard },
+  
   ];
 
   const closeSidebar = () => setSidebarOpen(false);
@@ -81,6 +82,28 @@ const Sidebar = ({ currentPage, setCurrentPage, sidebarOpen, setSidebarOpen }) =
             })}
           </ul>
         </nav>
+        {/* <div className="absolute bottom-24 left-6 right-6"> */}
+          {/* Logout Button */}
+{/* <div className="p-4"> */}
+  <button
+    onClick={() => {
+      // Clear authentication data
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      localStorage.removeItem('userType');
+      sessionStorage.removeItem('token');
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('userType');
+      
+      // Redirect to login page
+      navgiation('/login');
+    }}
+    className="w-full flex items-center justify-center bg-red-200 text-red-700 py-2 px-4 rounded-lg hover:bg-red-300 transition"
+  >
+    <span className="mr-2 text-lg">🔓</span> Logout
+  </button>
+  <div/>
+{/* </div> */}
         
         <div className="absolute bottom-6 left-6 right-6">
           <div className="bg-gray-50 rounded-lg p-4">

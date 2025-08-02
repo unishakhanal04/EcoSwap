@@ -3,10 +3,14 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 
 import BrowseItems from '../../pages/Buyer/BrowseItems';
-import MyRequests from '../../pages/Buyer/MyRequets';
+import MyRequests from '../../pages/Buyer/MyRequests';
 import Profile from '../../pages/Buyer/Profile'
 import Dashboard from '../../pages/Buyer/Dashboard';
 import Wishlist from '../../pages/Buyer/WishList';
+import MyOrder from '../../pages/Buyer/MyOrder';
+import MyReviews from '../../pages/Buyer/MyReviews';
+
+import { LogOut } from 'lucide-react';
 
 const BuyerDashboard = () => {
   const [currentPage, setCurrentPage] = useState('dashboard')
@@ -24,8 +28,12 @@ const BuyerDashboard = () => {
         return <Profile />
         case 'wishlist':
         return <Wishlist />
-      default:
-        return <Dashboard />
+        case 'review':
+          return <MyReviews/>
+  
+        
+      // default:
+      //   return <Dashboard />
     }
   }
 

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Star } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+
 import { 
   Leaf, 
   LayoutDashboard, 
@@ -12,9 +15,11 @@ import {
   Menu,
   X
 } from 'lucide-react';
-
+import { ShoppingCart } from 'lucide-react';
 const SellerNavigation = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Remove the type annotation ': string'
@@ -27,6 +32,8 @@ const SellerNavigation = () => {
     { path: '/seller/analytics', icon: BarChart3, label: 'Analytics' },
     { path: '/seller/request', icon: MessageSquare, label: 'Request' },
     { path: '/seller/settings', icon: Settings, label: 'Settings' },
+     { path: '/seller/review', icon: Star, label: 'Review' },
+      { path: '/seller/order', icon: ShoppingCart, label: 'Order' },
   ];
 
   return (
@@ -66,13 +73,16 @@ const SellerNavigation = () => {
 
           {/* Desktop Logout */}
           <div className="hidden md:flex items-center">
-            <Link
-              to="/login"
+            <button
+              onClick={() => {
+                logout();
+                navigate('/login');
+              }}
               className="flex items-center px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
             >
               <LogOut className="h-4 w-4 mr-2" />
               Logout
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -109,14 +119,17 @@ const SellerNavigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Link
-                to="/login"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors"
+              <button
+                onClick={() => {
+                  logout();
+                  navigate('/login');
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 transition-colors w-full text-left"
               >
                 <LogOut className="h-4 w-4 mr-3" />
                 Logout
-              </Link>
+              </button>
             </div>
           </div>
         )}
