@@ -1,67 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserTable from '../../component/Admin/UserTable';
 import UserModal from '../../component/Admin/UserModal';
 import SearchBar from '../../component/Admin/SearchBar';
 import { Plus } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { adminAPI } from '../../services/api';
 
 const Buyers = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [buyers, setBuyers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filteredBuyers, setFilteredBuyers] = useState([]);
 
-  // Mock data for buyers
-  const [buyers, setBuyers] = useState([
-    {
-      id: 1,
-      name: 'John Smith',
-      email: 'john.smith@email.com',
-      phone: '+1 (555) 123-4567',
-      joinDate: '2024-01-15',
-      status: 'active',
-      totalPurchases: 12,
-      totalSpent: '$1,245.00'
-    },
-    {
-      id: 2,
-      name: 'Sarah Johnson',
-      email: 'sarah.j@email.com',
-      phone: '+1 (555) 234-5678',
-      joinDate: '2024-02-03',
-      status: 'active',
-      totalPurchases: 8,
-      totalSpent: '$892.50'
-    },
-    {
-      id: 3,
-      name: 'Mike Wilson',
-      email: 'mike.wilson@email.com',
-      phone: '+1 (555) 345-6789',
-      joinDate: '2024-01-28',
-      status: 'inactive',
-      totalPurchases: 3,
-      totalSpent: '$156.75'
-    },
-    {
-      id: 4,
-      name: 'Emily Davis',
-      email: 'emily.davis@email.com',
-      phone: '+1 (555) 456-7890',
-      joinDate: '2024-03-10',
-      status: 'active',
-      totalPurchases: 15,
-      totalSpent: '$2,103.25'
-    },
-    {
-      id: 5,
-      name: 'David Brown',
-      email: 'david.brown@email.com',
-      phone: '+1 (555) 567-8901',
-      joinDate: '2024-02-18',
-      status: 'active',
-      totalPurchases: 6,
-      totalSpent: '$487.90'
+  useEffect(() => {
+    fetchBuyers();
+  }, []);
+
+  useEffect(() => {
+    const transformedBuyers = buyers.map(buyer => ({
+      ...buyer,
+      name: `${buyer.firstName || ''} ${buyer.lastName || ''}`.trim() || 'N/A',
+      phone: buyer.phone || 'N/A',
+      joinDate: buyer.createdAt,
+      totalSpent: `$${(buyer.totalPurchases * 50 || 0).toFixed(2)}`,
+      status: buyer.isActive ? 'active' : 'inactive'
+    }));
+    
+    const filtered = transformedBuyers.filter(buyer =>
+      buyer.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      buyer.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      buyer.phone?.includes(searchTerm)
+    );
+    setFilteredBuyers(filtered);
+  }, [buyers, searchTerm]);
+
+  const fetchBuyers = async () => {
+    try {
+      setLoading(true);
+      const response = await adminAPI.getBuyers();
+      setBuyers(response.data.users || []);
+    } catch (error) {
+      console.error('Error fetching buyers:', error);
+      toast.error('Failed to load buyers');
+    } finally {
+      setLoading(false);
     }
-  ]);
+  };
+
+
 
   const handleAddUser = () => {
     setSelectedUser(null);
@@ -73,34 +61,44 @@ const Buyers = () => {
     setShowModal(true);
   };
 
-  const handleDeleteUser = (userId) => {
-    setBuyers(buyers.filter(buyer => buyer.id !== userId));
-  };
-
-  const handleSaveUser = (userData) => {
-    if (selectedUser) {
-      // Update existing user
-      setBuyers(buyers.map(buyer => 
-        buyer.id === selectedUser.id ? { ...buyer, ...userData } : buyer
-      ));
-    } else {
-      // Add new user
-      const newUser = {
-        ...userData,
-        id: Math.max(...buyers.map(b => b.id)) + 1,
-        joinDate: new Date().toISOString().split('T')[0],
-        totalPurchases: 0,
-        totalSpent: '$0.00'
-      };
-      setBuyers([...buyers, newUser]);
+  const handleDeleteUser = async (userId) => {
+    try {
+      const response = await adminAPI.deleteUser(userId);
+      if (response.data.success) {
+        setBuyers(buyers.filter(buyer => buyer.id !== userId));
+        toast.success('Buyer deleted successfully');
+      }
+    } catch (error) {
+      console.error('Error deleting buyer:', error);
+      toast.error('Failed to delete buyer');
     }
-    setShowModal(false);
   };
 
-  const filteredBuyers = buyers.filter(buyer =>
-    buyer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    buyer.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleSaveUser = async (userData) => {
+    try {
+      if (selectedUser) {
+        // Update existing user
+        const response = await adminAPI.updateUser(selectedUser.id, userData);
+        if (response.data.success) {
+          setBuyers(buyers.map(buyer => 
+            buyer.id === selectedUser.id ? { ...buyer, ...userData } : buyer
+          ));
+          toast.success('Buyer updated successfully');
+        }
+      } else {
+        // Add new user
+        const response = await adminAPI.createUser({ ...userData, userType: 'buyer' });
+        if (response.data.success) {
+          setBuyers([...buyers, response.data.data]);
+          toast.success('Buyer created successfully');
+        }
+      }
+      setShowModal(false);
+    } catch (error) {
+      console.error('Error saving buyer:', error);
+      toast.error('Failed to save buyer');
+    }
+  };
 
   const buyerColumns = [
     { key: 'name', label: 'Name' },
@@ -150,20 +148,35 @@ const Buyers = () => {
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-4">
           <div className="text-2xl font-bold text-blue-600">
-            {buyers.reduce((sum, b) => sum + b.totalPurchases, 0)}
+            {buyers.reduce((sum, b) => sum + (b.totalPurchases || 0), 0)}
           </div>
           <div className="text-gray-600 text-sm">Total Purchases</div>
         </div>
       </div>
 
       {/* Users Table */}
-      <UserTable
-        users={filteredBuyers}
-        columns={buyerColumns}
-        onEdit={handleEditUser}
-        onDelete={handleDeleteUser}
-        userType="buyer"
-      />
+      {loading ? (
+        <div className="bg-white rounded-lg border border-gray-200 p-8">
+          <div className="animate-pulse space-y-4">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="flex space-x-4">
+                <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+                <div className="h-4 bg-gray-200 rounded w-1/4"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <UserTable
+          users={filteredBuyers}
+          columns={buyerColumns}
+          onEdit={handleEditUser}
+          onDelete={handleDeleteUser}
+          userType="buyer"
+        />
+      )}
 
       {/* Modal */}
       {showModal && (
