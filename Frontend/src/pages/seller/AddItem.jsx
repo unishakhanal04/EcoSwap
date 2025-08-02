@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Upload, X, Plus, DollarSign, Package, FileText, Tag, MapPin } from 'lucide-react';
+import axios from 'axios';
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
@@ -85,11 +86,78 @@ const AddItem = () => {
     setImages(prev => prev.filter(img => img.id !== id));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
-    console.log('Images:', images);
-    // Handle form submission
+    
+    try {
+      // Prepare FormData to send both product data and images
+      const formDataToSend = new FormData();
+      
+      // Add product data
+      formDataToSend.append('title', formData.title);
+      formDataToSend.append('description', formData.description);
+      formDataToSend.append('price', parseFloat(formData.price));
+      formDataToSend.append('condition', formData.condition);
+      formDataToSend.append('location', formData.location);
+      formDataToSend.append('tags', formData.tags);
+      formDataToSend.append('dimensions', formData.dimensions);
+      formDataToSend.append('weight', formData.weight);
+      formDataToSend.append('material', formData.material);
+      formDataToSend.append('color', formData.color);
+      formDataToSend.append('brand', formData.brand);
+      if (formData.yearMade) {
+        formDataToSend.append('yearMade', parseInt(formData.yearMade));
+      }
+      
+      // Add images
+      images.forEach((image) => {
+        if (image.file) {
+          formDataToSend.append('images', image.file);
+        }
+      });
+
+      // TODO: Add JWT token from localStorage when authentication is implemented
+      // const token = localStorage.getItem('token');
+      // headers: { Authorization: `Bearer ${token}` }
+
+      const response = await axios.post('http://localhost:5000/api/seller/add-item', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      
+      if (response.data.success) {
+        // Show success message
+        alert('Item added successfully! Your product has been listed.');
+        
+        // Reset form
+        setFormData({
+          title: '',
+          description: '',
+          price: '',
+          category: '',
+          condition: '',
+          location: '',
+          tags: '',
+          dimensions: '',
+          weight: '',
+          material: '',
+          color: '',
+          brand: '',
+          yearMade: ''
+        });
+        setImages([]);
+      }
+    } catch (error) {
+      console.error('Error adding item:', error);
+      
+      // Show error message
+      if (error.response && error.response.data && error.response.data.message) {
+        alert(`Error: ${error.response.data.message}`);
+      } else {
+        alert('Failed to add item. Please try again.');
+      }
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   User, 
   Mail, 
@@ -14,20 +14,30 @@ import {
   Eye,
   EyeOff
 } from 'lucide-react';
+import { userAPI } from '../../services/api';
+import toast from 'react-hot-toast';
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState('profile');
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   
   const [profileData, setProfileData] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com',
-    phone: '+1 (555) 123-4567',
-    location: 'New York, NY',
-    bio: 'Passionate collector and seller of unique home decor items. I love finding beautiful pieces and sharing them with others who appreciate quality craftsmanship.',
-    storeName: 'John\'s Vintage Finds',
-    storeDescription: 'Curated collection of vintage and unique home decorative items'
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    address: '',
+    city: '',
+    state: '',
+    zipCode: ''
+  });
+
+  const [passwordData, setPasswordData] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
   });
 
   const [notificationSettings, setNotificationSettings] = useState({
@@ -48,10 +58,10 @@ const Settings = () => {
 
   const tabs = [
     { id: 'profile', label: 'Profile', icon: User },
-    { id: 'store', label: 'Store Settings', icon: Store },
     { id: 'notifications', label: 'Notifications', icon: Bell },
     { id: 'privacy', label: 'Privacy', icon: Shield },
-    { id: 'payment', label: 'Payment', icon: CreditCard }
+    // { id: 'store', label: 'Store Settings', icon: Store },
+    // { id: 'payment', label: 'Payment', icon: CreditCard }
   ];
 
   const handleProfileChange = (e) => {
@@ -69,6 +79,20 @@ const Settings = () => {
     }));
   };
 
+  const handleSaveNotifications = async () => {
+    try {
+      setSaving(true);
+      // Simulate saving - preferences functionality removed
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast.success('Notification settings updated successfully!');
+    } catch (error) {
+      console.error('Error updating notification settings:', error);
+      toast.error('Failed to update notification settings');
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const handlePrivacyChange = (setting, value) => {
     setPrivacySettings(prev => ({
       ...prev,
@@ -76,9 +100,106 @@ const Settings = () => {
     }));
   };
 
-  const handleSave = () => {
-    console.log('Saving settings...');
-    // Handle save logic here
+  const handleSavePrivacy = async () => {
+    try {
+      setSaving(true);
+      // Simulate saving - preferences functionality removed
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast.success('Privacy settings updated successfully!');
+    } catch (error) {
+      console.error('Error updating privacy settings:', error);
+      toast.error('Failed to update privacy settings');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserProfile();
+  }, []);
+
+
+
+  const fetchUserProfile = async () => {
+    try {
+      setLoading(true);
+      const userData = JSON.parse(localStorage.getItem('user'));
+      if (userData) {
+        const response = await userAPI.getUserProfile(userData.id);
+        const user = response.data.user;
+        setProfileData({
+          firstName: user.firstName || '',
+          lastName: user.lastName || '',
+          email: user.email || '',
+          phone: user.phone || '',
+          address: user.address || '',
+          city: user.city || '',
+          state: user.state || '',
+          zipCode: user.zipCode || ''
+        });
+      }
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
+      toast.error('Failed to load profile data');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSaveProfile = async () => {
+    try {
+      setSaving(true);
+      await userAPI.updateUserProfile(profileData);
+      toast.success('Profile updated successfully!');
+      
+      const userData = JSON.parse(localStorage.getItem('user'));
+      const updatedUser = { ...userData, ...profileData };
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      toast.error('Failed to update profile');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleChangePassword = async () => {
+    if (passwordData.newPassword !== passwordData.confirmPassword) {
+      toast.error('New passwords do not match');
+      return;
+    }
+
+    if (passwordData.newPassword.length < 6) {
+      toast.error('Password must be at least 6 characters long');
+      return;
+    }
+
+    try {
+      setSaving(true);
+      await userAPI.changePassword({
+        currentPassword: passwordData.currentPassword,
+        newPassword: passwordData.newPassword
+      });
+      toast.success('Password changed successfully!');
+      setPasswordData({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: ''
+      });
+    } catch (error) {
+      console.error('Error changing password:', error);
+      toast.error(error.response?.data?.message || 'Failed to change password');
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -121,117 +242,232 @@ const Settings = () => {
                 <div>
                   <h2 className="text-xl font-semibold text-gray-900 mb-6">Profile Information</h2>
                   
-                  {/* Profile Picture */}
-                  <div className="flex items-center mb-8">
-                    <div className="relative">
-                      <img
-                        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150"
-                        alt="Profile"
-                        className="w-20 h-20 rounded-full object-cover"
-                      />
-                      <button className="absolute bottom-0 right-0 bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700 transition-colors">
-                        <Camera className="h-4 w-4" />
+                  {loading ? (
+                    <div className="flex justify-center py-8">
+                      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
+                    </div>
+                  ) : (
+                    <>
+                      {/* Profile Picture */}
+                      <div className="flex items-center mb-8">
+                        <div className="relative">
+                          <img
+                            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150"
+                            alt="Profile"
+                            className="w-20 h-20 rounded-full object-cover"
+                          />
+                          <button className="absolute bottom-0 right-0 bg-emerald-600 text-white p-2 rounded-full hover:bg-emerald-700 transition-colors">
+                            <Camera className="h-4 w-4" />
+                          </button>
+                        </div>
+                        <div className="ml-6">
+                          <h3 className="text-lg font-medium text-gray-900">Profile Photo</h3>
+                          <p className="text-sm text-gray-600">Update your profile picture</p>
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            First Name
+                          </label>
+                          <div className="relative">
+                            <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                            <input
+                              type="text"
+                              name="firstName"
+                              value={profileData.firstName}
+                              onChange={handleProfileChange}
+                              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            Last Name
+                          </label>
+                          <div className="relative">
+                            <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                            <input
+                              type="text"
+                              name="lastName"
+                              value={profileData.lastName}
+                              onChange={handleProfileChange}
+                              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            Email Address
+                          </label>
+                          <div className="relative">
+                            <Mail className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                            <input
+                              type="email"
+                              name="email"
+                              value={profileData.email}
+                              onChange={handleProfileChange}
+                              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-gray-50"
+                              disabled
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            Phone Number
+                          </label>
+                          <div className="relative">
+                            <Phone className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                            <input
+                              type="tel"
+                              name="phone"
+                              value={profileData.phone}
+                              onChange={handleProfileChange}
+                              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div className="md:col-span-2">
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            Address
+                          </label>
+                          <div className="relative">
+                            <MapPin className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+                            <input
+                              type="text"
+                              name="address"
+                              value={profileData.address}
+                              onChange={handleProfileChange}
+                              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                            />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            City
+                          </label>
+                          <input
+                            type="text"
+                            name="city"
+                            value={profileData.city}
+                            onChange={handleProfileChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            State
+                          </label>
+                          <input
+                            type="text"
+                            name="state"
+                            value={profileData.state}
+                            onChange={handleProfileChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                            ZIP Code
+                          </label>
+                          <input
+                            type="text"
+                            name="zipCode"
+                            value={profileData.zipCode}
+                            onChange={handleProfileChange}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Change Password Section */}
+                      <div className="mt-8 pt-6 border-t border-gray-200">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Change Password</h3>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                              Current Password
+                            </label>
+                            <div className="relative">
+                              <input
+                                type={showPassword ? 'text' : 'password'}
+                                name="currentPassword"
+                                value={passwordData.currentPassword}
+                                onChange={handlePasswordChange}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                              New Password
+                            </label>
+                            <div className="relative">
+                              <input
+                                type={showPassword ? 'text' : 'password'}
+                                name="newPassword"
+                                value={passwordData.newPassword}
+                                onChange={handlePasswordChange}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                              Confirm New Password
+                            </label>
+                            <div className="relative">
+                              <input
+                                type={showPassword ? 'text' : 'password'}
+                                name="confirmPassword"
+                                value={passwordData.confirmPassword}
+                                onChange={handlePasswordChange}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-3 top-2.5 text-gray-400 hover:text-gray-600"
+                              >
+                                {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="mt-4">
+                          <button
+                            onClick={handleChangePassword}
+                            disabled={saving || !passwordData.currentPassword || !passwordData.newPassword || !passwordData.confirmPassword}
+                            className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            {saving ? 'Changing...' : 'Change Password'}
+                          </button>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                  {/* Save Button for Privacy */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex justify-end">
+                      <button
+                        onClick={handleSavePrivacy}
+                        disabled={saving}
+                        className="flex items-center px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Save className="h-4 w-4 mr-2" />
+                        {saving ? 'Saving...' : 'Save Privacy Settings'}
                       </button>
-                    </div>
-                    <div className="ml-6">
-                      <h3 className="text-lg font-medium text-gray-900">Profile Photo</h3>
-                      <p className="text-sm text-gray-600">Update your profile picture</p>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        First Name
-                      </label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={profileData.firstName}
-                          onChange={handleProfileChange}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Last Name
-                      </label>
-                      <div className="relative">
-                        <User className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          name="lastName"
-                          value={profileData.lastName}
-                          onChange={handleProfileChange}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Email Address
-                      </label>
-                      <div className="relative">
-                        <Mail className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <input
-                          type="email"
-                          name="email"
-                          value={profileData.email}
-                          onChange={handleProfileChange}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Phone Number
-                      </label>
-                      <div className="relative">
-                        <Phone className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={profileData.phone}
-                          onChange={handleProfileChange}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Location
-                      </label>
-                      <div className="relative">
-                        <MapPin className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-                        <input
-                          type="text"
-                          name="location"
-                          value={profileData.location}
-                          onChange={handleProfileChange}
-                          className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-1">
-                        Bio
-                      </label>
-                      <textarea
-                        name="bio"
-                        value={profileData.bio}
-                        onChange={handleProfileChange}
-                        rows={4}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-                        placeholder="Tell buyers about yourself..."
-                      />
                     </div>
                   </div>
                 </div>
@@ -284,6 +520,20 @@ const Settings = () => {
                           Choose Image
                         </button>
                       </div>
+                    </div>
+                  </div>
+                  
+                  {/* Save Button for Store Settings */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex justify-end">
+                      <button
+                        onClick={handleSaveProfile}
+                        disabled={saving}
+                        className="flex items-center px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Save className="h-4 w-4 mr-2" />
+                        {saving ? 'Saving...' : 'Save Store Settings'}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -389,6 +639,20 @@ const Settings = () => {
                         />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-emerald-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
                       </label>
+                    </div>
+                  </div>
+                  
+                  {/* Save Button for Notifications */}
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="flex justify-end">
+                      <button
+                        onClick={handleSaveNotifications}
+                        disabled={saving}
+                        className="flex items-center px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Save className="h-4 w-4 mr-2" />
+                        {saving ? 'Saving...' : 'Save Notification Settings'}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -527,17 +791,20 @@ const Settings = () => {
               )}
 
               {/* Save Button */}
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="flex justify-end">
-                  <button
-                    onClick={handleSave}
-                    className="flex items-center px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
-                  >
-                    <Save className="h-4 w-4 mr-2" />
-                    Save Changes
-                  </button>
+              {activeTab === 'profile' && !loading && (
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <div className="flex justify-end">
+                    <button
+                      onClick={handleSaveProfile}
+                      disabled={saving}
+                      className="flex items-center px-6 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <Save className="h-4 w-4 mr-2" />
+                      {saving ? 'Saving...' : 'Save Changes'}
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
