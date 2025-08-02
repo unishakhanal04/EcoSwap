@@ -1,48 +1,119 @@
 import { useState, useEffect } from 'react'
+import toast from 'react-hot-toast'
+import { productAPI, orderAPI, requestAPI } from '../../services/api'
 
 const Dashboard = () => {
   const [stats, setStats] = useState({
-    totalRequests: 12,
-    pendingRequests: 5,
-    completedPurchases: 7,
-    savedItems: 23
+    totalRequests: 0,
+    pendingRequests: 0,
+    completedPurchases: 0,
+    savedItems: 0
   })
+  const [recentItems, setRecentItems] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const [recentItems, setRecentItems] = useState([
-    {
-      id: 1,
-      name: 'Vintage Ceramic Vase',
-      price: 25,
-      image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=300',
-      seller: 'Sarah M.',
-      status: 'available'
-    },
-    {
-      id: 2,
-      name: 'Handmade Wall Clock',
-      price: 45,
-      image: 'https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=300',
-      seller: 'Mike R.',
-      status: 'available'
-    },
-    {
-      id: 3,
-      name: 'Rustic Picture Frame',
-      price: 18,
-      image: 'https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=300',
-      seller: 'Emma K.',
-      status: 'available'
+  useEffect(() => {
+    fetchDashboardData()
+  }, [])
+
+  const fetchDashboardData = async () => {
+    try {
+      setLoading(true)
+      const [statsResponse, itemsResponse] = await Promise.all([
+        orderAPI.getBuyerStats(),
+        productAPI.getRecentProducts()
+      ])
+      
+      if (statsResponse.data.success) {
+        setStats(statsResponse.data.data)
+      }
+      
+      if (itemsResponse.data.success) {
+        setRecentItems(itemsResponse.data.data)
+      }
+    } catch (error) {
+      console.error('Error fetching dashboard data:', error)
+      toast.error('Failed to load dashboard data')
+    } finally {
+      setLoading(false)
     }
-  ])
-
-  const handleRequestItem = (itemId) => {
-    alert(`Request sent for item ${itemId}!`)
-    setStats(prev => ({
-      ...prev,
-      totalRequests: prev.totalRequests + 1,
-      pendingRequests: prev.pendingRequests + 1
-    }))
   }
+
+  const handleRequestItem = async (itemId) => {
+    try {
+      const response = await orderAPI.createRequest(itemId, {
+        pickupAddress: formData.pickupAddress,
+        notes: formData.field1
+      })
+      
+      if (response.data.success) {
+        toast.success('Request sent successfully!')
+        setStats(prev => ({
+          ...prev,
+          totalRequests: prev.totalRequests + 1,
+          pendingRequests: prev.pendingRequests + 1
+        }))
+        setShowRequestPopup(false)
+        setFormData({ pickupAddress: '', field1: '' })
+      }
+    } catch (error) {
+      console.error('Error sending request:', error)
+      toast.error('Failed to send request')
+    }
+  }
+
+  const [showRequestPopup, setShowRequestPopup] = useState(false);
+const [selectedItem, setSelectedItem] = useState(null);
+const [formData, setFormData] = useState({
+  pickupAddress: '',
+  field1: '',
+  field2: '',
+  field3: '',
+  field4: '',
+});
+
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+const handleRequestSubmit = async (e) => {
+  e.preventDefault();
+  if (!selectedItem) return;
+  
+  try {
+    const response = await requestAPI.createRequest({
+      itemName: selectedItem.title || selectedItem.name,
+      sellerId: selectedItem.seller?.id || selectedItem.sellerId,
+      message: formData.field1,
+      pickupAddress: formData.pickupAddress,
+      requestedPrice: null
+    });
+    
+    if (response.data.success) {
+      toast.success('Request sent successfully!');
+      setStats(prev => ({
+        ...prev,
+        totalRequests: prev.totalRequests + 1,
+        pendingRequests: prev.pendingRequests + 1
+      }));
+      setShowRequestPopup(false);
+      setSelectedItem(null);
+      setFormData({ pickupAddress: '', field1: '', field2: '', field3: '', field4: '' });
+    }
+  } catch (error) {
+    console.error('Error sending request:', error);
+    toast.error('Failed to send request');
+  }
+};
+const inputStyle = {
+  width: '100%',
+  padding: '10px',
+  marginBottom: '10px',
+  borderRadius: '5px',
+  border: '1px solid #007f66',
+};
+
+
 
   return (
     <div className="space-y-6">
@@ -113,26 +184,56 @@ const Dashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {recentItems.map((item) => (
-            <div key={item.id} className="bg-gray-50 p-4 rounded-xl shadow hover:shadow-md transition">
+          {recentItems.map((item) => {
+            console.log('Item data:', item);
+             console.log('Item imageUrl:', item.imageUrl);
+             console.log('Item images array:', item.images);
+             const imageUrl = item.imageUrl ? `http://localhost:5000${item.imageUrl}` : '/api/placeholder/300/200';
+             console.log('Final image URL:', imageUrl);
+            
+            return (
+              <div key={item.id} className="bg-gray-50 p-4 rounded-xl shadow hover:shadow-md transition">
               <img
-                src={item.image}
-                alt={item.name}
+                src={imageUrl}
+                alt={item.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
+                onError={(e) => {
+                  console.log('Image failed to load:', e.target.src);
+                  e.target.src = '/api/placeholder/300/200';
+                }}
+                onLoad={() => console.log('Image loaded successfully:', imageUrl)}
               />
-              <h3 className="font-semibold text-gray-800 mb-1">{item.name}</h3>
-              <p className="text-sm text-gray-600 mb-2">By {item.seller}</p>
+              <h3 className="font-semibold text-gray-800 mb-1">{item.title}</h3>
+              <p className="text-sm text-gray-600 mb-2">By {item.seller ? `${item.seller.firstName} ${item.seller.lastName}` : 'Unknown Seller'}</p>
               <div className="flex items-center justify-between">
                 <span className="text-lg font-bold text-[#007f66]">${item.price}</span>
-                <button
+                {/* <button
                   onClick={() => handleRequestItem(item.id)}
                   className="bg-[#007f66] hover:bg-[#006652] text-white text-sm px-4 py-1 rounded-md transition"
                 >
                   Request
-                </button>
+                </button> */}
+                <button
+  onClick={() => {
+    setSelectedItem(item);
+    setShowRequestPopup(true);
+  }}
+  style={{
+    backgroundColor: '#007f66',
+    color: 'white',
+    padding: '10px 20px',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer'
+  }}
+>
+  Request
+</button>
+
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -183,6 +284,112 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {showRequestPopup && (
+  <div style={{
+    position: 'fixed',
+    top: 0, left: 0,
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1000
+  }}>
+    <div style={{
+      backgroundColor: '#fff',
+      padding: '40px 30px',
+      borderRadius: '12px',
+      width: '450px',
+      boxShadow: '0 12px 25px rgba(0,0,0,0.3)',
+      fontFamily: 'sans-serif'
+    }}>
+      <h2 style={{
+        color: '#007f66',
+        marginBottom: '25px',
+        textAlign: 'center',
+        fontWeight: '600'
+      }}>
+        Request Form
+      </h2>
+
+      <form onSubmit={handleRequestSubmit}>
+        {[
+           { label: 'Name', name: 'field2' },
+          { label: 'Pickup Address', name: 'pickupAddress' },
+          { label: 'Default Pickup', name: 'field1' },
+          
+         
+        ].map(({ label, name }) => (
+          <div key={name} style={{ marginBottom: '15px' }}>
+            <label
+              htmlFor={name}
+              style={{ display: 'block', marginBottom: '5px', color: '#007f66', fontWeight: 500 }}
+            >
+              {label}
+            </label>
+            <input
+              id={name}
+              type="text"
+              name={name}
+              placeholder={label}
+              value={formData[name]}
+              onChange={handleChange}
+              required={name === 'pickupAddress'}
+              style={{
+                width: '100%',
+                padding: '10px 12px',
+                border: '1px solid #ccc',
+                borderRadius: '6px',
+                outline: 'none',
+                transition: 'border-color 0.2s',
+              }}
+              onFocus={(e) => (e.target.style.borderColor = '#007f66')}
+              onBlur={(e) => (e.target.style.borderColor = '#ccc')}
+            />
+          </div>
+        ))}
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '25px' }}>
+          <button
+            type="submit"
+            style={{
+              backgroundColor: '#007f66',
+              color: '#fff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: '500',
+              flex: 1,
+              marginRight: '10px'
+            }}
+          >
+            Submit
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowRequestPopup(false)}
+            style={{
+              backgroundColor: '#f0f0f0',
+              color: '#555',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontWeight: '500',
+              flex: 1,
+              marginLeft: '10px'
+            }}
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+)}
+
     </div>
   )
 }
