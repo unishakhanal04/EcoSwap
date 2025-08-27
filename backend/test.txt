@@ -1,0 +1,1986 @@
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: TypeError: Cannot set properties of undefined (setting 'supportsSearchPath')
+        at PostgresQueryInterface.dropTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:248:17)
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Function.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1448:12)
+        at Sequelize.drop (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:927:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5)
+
+      179 |     await Order.sync({ force: true });
+      180 |   } catch (error) {
+    > 181 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      182 |     throw error;
+      183 |   }
+      184 | });
+
+      at Object.error (tests/models/testSetup.js:181:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:140:49
+        at PostgresQueryInterface.ensureEnums (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:139:20)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:210:5)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'typname must be unique',
+          type: 'unique violation',
+          path: 'typname',
+          value: 'enum_Users_userType',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        },
+        ValidationErrorItem {
+          message: 'typnamespace must be unique',
+          type: 'unique violation',
+          path: 'typnamespace',
+          value: '2200',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      fields: { typname: 'enum_Users_userType', typnamespace: '2200' },
+      sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.showIndex (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:600:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1413:29)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: could not open relation with OID 163294
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      original: error: could not open relation with OID 163294
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+      parameters: {}
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:140:49
+        at PostgresQueryInterface.ensureEnums (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:139:20)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:210:5)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'typname must be unique',
+          type: 'unique violation',
+          path: 'typname',
+          value: 'enum_Users_userType',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        },
+        ValidationErrorItem {
+          message: 'typnamespace must be unique',
+          type: 'unique violation',
+          path: 'typnamespace',
+          value: '2200',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      fields: { typname: 'enum_Users_userType', typnamespace: '2200' },
+      sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: type "public.enum_Products_condition" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 118,
+        severity: 'ERROR',
+        code: '42704',
+        detail: undefined,
+        hint: undefined,
+        position: '159',
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'parse_type.c',
+        line: '270',
+        routine: 'typenameType',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" "public"."enum_Products_condition" NOT NULL, "status" "public"."enum_Products_status" DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: type "public.enum_Products_condition" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 118,
+        severity: 'ERROR',
+        code: '42704',
+        detail: undefined,
+        hint: undefined,
+        position: '159',
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'parse_type.c',
+        line: '270',
+        routine: 'typenameType',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" "public"."enum_Products_condition" NOT NULL, "status" "public"."enum_Products_status" DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" "public"."enum_Products_condition" NOT NULL, "status" "public"."enum_Products_status" DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.showIndex (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:600:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1413:29)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: could not open relation with OID 163370
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      original: error: could not open relation with OID 163370
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+      parameters: {}
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:140:49
+        at PostgresQueryInterface.ensureEnums (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query-interface.js:139:20)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:210:5)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:175:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'typname must be unique',
+          type: 'unique violation',
+          path: 'typname',
+          value: 'enum_Users_userType',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        },
+        ValidationErrorItem {
+          message: 'typnamespace must be unique',
+          type: 'unique violation',
+          path: 'typnamespace',
+          value: '2200',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 415,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (typname, typnamespace)=(enum_Users_userType, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: `SQL statement "CREATE TYPE "public"."enum_Users_userType" AS ENUM('buyer', 'seller', 'admin')"\n` +
+          'PL/pgSQL function inline_code_block line 1 at SQL statement',
+        schema: 'pg_catalog',
+        table: 'pg_type',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_type_typname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`,
+        parameters: undefined
+      },
+      fields: { typname: 'enum_Users_userType', typnamespace: '2200' },
+      sql: `DROP TYPE IF EXISTS "public"."enum_Users_userType"; DO 'BEGIN CREATE TYPE "public"."enum_Users_userType" AS ENUM(''buyer'', ''seller'', ''admin''); EXCEPTION WHEN duplicate_object THEN null; END';`
+    }
+
+      175 |     await testSequelize.sync({ force: true });
+      176 |   } catch (error) {
+    > 177 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      178 |     throw error;
+      179 |   }
+      180 | });
+
+      at Object.error (tests/models/testSetup.js:177:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.showIndex (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:600:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1413:29)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: could not open relation with OID 163912
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      original: error: could not open relation with OID 163912
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+      parameters: {}
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'relname must be unique',
+          type: 'unique violation',
+          path: 'relname',
+          value: 'Users_id_seq',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        },
+        ValidationErrorItem {
+          message: 'relnamespace must be unique',
+          type: 'unique violation',
+          path: 'relnamespace',
+          value: '2200',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_class_relname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 255,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (relname, relnamespace)=(Users_id_seq, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_class',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_class_relname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `CREATE TABLE IF NOT EXISTS "Users" ("id"  SERIAL , "firstName" VARCHAR(255) NOT NULL, "lastName" VARCHAR(255) NOT NULL, "email" VARCHAR(255) NOT NULL UNIQUE, "password" VARCHAR(255) NOT NULL, "userType" VARCHAR(255) NOT NULL DEFAULT 'buyer', "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_class_relname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 255,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (relname, relnamespace)=(Users_id_seq, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_class',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_class_relname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: `CREATE TABLE IF NOT EXISTS "Users" ("id"  SERIAL , "firstName" VARCHAR(255) NOT NULL, "lastName" VARCHAR(255) NOT NULL, "email" VARCHAR(255) NOT NULL UNIQUE, "password" VARCHAR(255) NOT NULL, "userType" VARCHAR(255) NOT NULL DEFAULT 'buyer', "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      fields: { relname: 'Users_id_seq', relnamespace: '2200' },
+      sql: `CREATE TABLE IF NOT EXISTS "Users" ("id"  SERIAL , "firstName" VARCHAR(255) NOT NULL, "lastName" VARCHAR(255) NOT NULL, "email" VARCHAR(255) NOT NULL UNIQUE, "password" VARCHAR(255) NOT NULL, "userType" VARCHAR(255) NOT NULL DEFAULT 'buyer', "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Products" ("id"  SERIAL , "title" VARCHAR(255) NOT NULL, "description" TEXT NOT NULL, "price" DECIMAL(10,2) NOT NULL, "condition" VARCHAR(255) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'active', "sellerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "categoryId" INTEGER REFERENCES "Categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'relname must be unique',
+          type: 'unique violation',
+          path: 'relname',
+          value: 'Categories_id_seq',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        },
+        ValidationErrorItem {
+          message: 'relnamespace must be unique',
+          type: 'unique violation',
+          path: 'relnamespace',
+          value: '2200',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_class_relname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 260,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (relname, relnamespace)=(Categories_id_seq, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_class',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_class_relname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE TABLE IF NOT EXISTS "Categories" ("id"  SERIAL , "name" VARCHAR(255) NOT NULL UNIQUE, "description" TEXT, "isActive" BOOLEAN DEFAULT true, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));',
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_class_relname_nsp_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 260,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (relname, relnamespace)=(Categories_id_seq, 2200) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_class',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_class_relname_nsp_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE TABLE IF NOT EXISTS "Categories" ("id"  SERIAL , "name" VARCHAR(255) NOT NULL UNIQUE, "description" TEXT, "isActive" BOOLEAN DEFAULT true, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));',
+        parameters: undefined
+      },
+      fields: { relname: 'Categories_id_seq', relnamespace: '2200' },
+      sql: 'CREATE TABLE IF NOT EXISTS "Categories" ("id"  SERIAL , "name" VARCHAR(255) NOT NULL UNIQUE, "description" TEXT, "isActive" BOOLEAN DEFAULT true, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));'
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:199:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      199 |     await testSequelize.sync({ force: true });
+      200 |   } catch (error) {
+    > 201 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      202 |     throw error;
+      203 |   }
+      204 | });
+
+      at Object.error (tests/models/testSetup.js:201:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:195:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'nspname must be unique',
+          type: 'unique violation',
+          path: 'nspname',
+          value: 'public',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      fields: { nspname: 'public' },
+      sql: 'CREATE SCHEMA public;'
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:195:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'nspname must be unique',
+          type: 'unique violation',
+          path: 'nspname',
+          value: 'public',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      fields: { nspname: 'public' },
+      sql: 'CREATE SCHEMA public;'
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.showIndex (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:600:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1413:29)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:197:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: could not open relation with OID 164199
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      original: error: could not open relation with OID 164199
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Users' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+      parameters: {}
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:197:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: no schema has been selected to create in
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 120,
+        severity: 'ERROR',
+        code: '3F000',
+        detail: undefined,
+        hint: undefined,
+        position: '28',
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '702',
+        routine: 'RangeVarGetCreationNamespace',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: no schema has been selected to create in
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 120,
+        severity: 'ERROR',
+        code: '3F000',
+        detail: undefined,
+        hint: undefined,
+        position: '28',
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '702',
+        routine: 'RangeVarGetCreationNamespace',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:195:5) {
+      name: 'SequelizeUniqueConstraintError',
+      errors: [
+        ValidationErrorItem {
+          message: 'nspname must be unique',
+          type: 'unique violation',
+          path: 'nspname',
+          value: 'public',
+          origin: 'DB',
+          instance: null,
+          validatorKey: 'not_unique',
+          validatorName: null,
+          validatorArgs: []
+        }
+      ],
+      parent: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      original: error: duplicate key value violates unique constraint "pg_namespace_nspname_index"
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 233,
+        severity: 'ERROR',
+        code: '23505',
+        detail: 'Key (nspname)=(public) already exists.',
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: 'pg_catalog',
+        table: 'pg_namespace',
+        column: undefined,
+        dataType: undefined,
+        constraint: 'pg_namespace_nspname_index',
+        file: 'nbtinsert.c',
+        line: '666',
+        routine: '_bt_check_unique',
+        sql: 'CREATE SCHEMA public;',
+        parameters: undefined
+      },
+      fields: { nspname: 'public' },
+      sql: 'CREATE SCHEMA public;'
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.showIndex (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:600:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1413:29)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:197:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: could not open relation with OID 164271
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Categories' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      original: error: could not open relation with OID 164271
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 98,
+        severity: 'ERROR',
+        code: 'XX000',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'relation.c',
+        line: '61',
+        routine: 'relation_open',
+        sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Categories' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+        parameters: undefined
+      },
+      sql: "SELECT i.relname AS name, ix.indisprimary AS primary, ix.indisunique AS unique, ix.indkey AS indkey, array_agg(a.attnum) as column_indexes, array_agg(a.attname) AS column_names, pg_get_indexdef(ix.indexrelid) AS definition FROM pg_class t, pg_class i, pg_index ix, pg_attribute a WHERE t.oid = ix.indrelid AND i.oid = ix.indexrelid AND a.attrelid = t.oid AND t.relkind = 'r' and t.relname = 'Categories' GROUP BY i.relname, ix.indexrelid, ix.indisprimary, ix.indisunique, ix.indkey ORDER BY i.relname;",
+      parameters: {}
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
+  console.error
+    Unable to connect to test database: Error: 
+        at Query.run (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/postgres/query.js:76:25)
+        at /home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:650:28
+        at processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at PostgresQueryInterface.createTable (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/dialects/abstract/query-interface.js:229:12)
+        at Function.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/model.js:1353:7)
+        at Sequelize.sync (/home/sanbid/window/for_paneer/backend/node_modules/sequelize/src/sequelize.js:825:9)
+        at Object.<anonymous> (/home/sanbid/window/for_paneer/backend/tests/models/testSetup.js:197:5) {
+      name: 'SequelizeDatabaseError',
+      parent: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      original: error: relation "Users" does not exist
+          at Parser.parseErrorMessage (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:369:69)
+          at Parser.handlePacket (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:187:21)
+          at Parser.parse (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/parser.ts:102:30)
+          at Socket.<anonymous> (/home/sanbid/window/for_paneer/backend/node_modules/pg-protocol/src/index.ts:7:48)
+          at Socket.emit (node:events:518:28)
+          at addChunk (node:internal/streams/readable:561:12)
+          at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+          at Socket.Readable.push (node:internal/streams/readable:392:5)
+          at TCP.onStreamRead (node:internal/stream_base_commons:189:23) {
+        length: 103,
+        severity: 'ERROR',
+        code: '42P01',
+        detail: undefined,
+        hint: undefined,
+        position: undefined,
+        internalPosition: undefined,
+        internalQuery: undefined,
+        where: undefined,
+        schema: undefined,
+        table: undefined,
+        column: undefined,
+        dataType: undefined,
+        constraint: undefined,
+        file: 'namespace.c',
+        line: '636',
+        routine: 'RangeVarGetRelidExtended',
+        sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+        parameters: undefined
+      },
+      sql: `CREATE TABLE IF NOT EXISTS "Orders" ("id"  SERIAL , "orderNumber" VARCHAR(255) NOT NULL UNIQUE, "totalAmount" DECIMAL(10,2) NOT NULL, "status" VARCHAR(255) NOT NULL DEFAULT 'pending', "paymentStatus" VARCHAR(255) NOT NULL DEFAULT 'pending', "shippingAddress" TEXT NOT NULL, "buyerId" INTEGER NOT NULL REFERENCES "Users" ("id") ON DELETE CASCADE ON UPDATE CASCADE, "createdAt" TIMESTAMP WITH TIME ZONE NOT NULL, "updatedAt" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY ("id"));`,
+      parameters: {}
+    }
+
+      197 |     await testSequelize.sync({ force: true });
+      198 |   } catch (error) {
+    > 199 |     console.error('Unable to connect to test database:', error);
+          |             ^
+      200 |     throw error;
+      201 |   }
+      202 | });
+
+      at Object.error (tests/models/testSetup.js:199:13)
+
